@@ -4,6 +4,28 @@
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
+  @keyframes floatAnimation {
+    0% {
+      transform: translate(1rem,-1rem);
+    }
+    50% {
+      transform: translate(2rem,-2rem);
+    }
+    100% {
+      transform: translate(1rem,-1rem);
+    }
+  }
+  @keyframes floatAnimation2 {
+    0% {
+      transform: translate(-1rem,1rem);
+    }
+    50% {
+      transform: translate(-2rem,2rem);
+    }
+    100% {
+      transform: translate(-1rem,1rem);
+    }
+  }
   #hero-855 {
     /* 116px - 164px top */
     /* 60px - 100px  bottom */
@@ -100,6 +122,49 @@
   #hero-855 .cs-button-solid:hover:before {
     width: 100%;
   }
+  #hero-855 .cs-image-container {
+    width: 100%;
+    max-width: 35.625rem;
+    display: flex;
+  }
+  #hero-855 .cs-card-fader {
+    content: "";
+    width: 100%;
+    max-width: 35.625rem;
+    /* 400px - 712px */
+    height: clamp(25rem, 95vw, 44.5rem);
+    /* 100px - 200px */
+    border-radius: 0 clamp(6.25rem, 17vw, 12.5rem) 0 clamp(6.25rem, 17vw, 12.5rem);
+    box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.16);
+    background: var(--primary);
+    opacity: 0.3;
+    position: absolute;
+    animation-name: floatAnimation;
+    animation-duration: 7s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    z-index: 8;
+  }
+  #hero-855 .cs-card-fader2 {
+    content: "";
+    width: 100%;
+    max-width: 35.625rem;
+    /* 400px - 712px */
+    height: clamp(25rem, 95vw, 44.5rem);
+    /* 100px - 200px */
+    border-radius: 0 clamp(6.25rem, 17vw, 12.5rem) 0 clamp(6.25rem, 17vw, 12.5rem);
+    box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.16);
+    background: var(--primary);
+    opacity: 0.15;
+    position: absolute;
+    animation-name: floatAnimation2;
+    animation-duration: 7s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    z-index: 7;
+  }
   #hero-855 .cs-picture {
     width: 100%;
     max-width: 35.625rem;
@@ -112,6 +177,7 @@
     overflow: hidden;
     display: block;
     position: relative;
+    z-index: 9;
   }
   #hero-855 .cs-picture img {
     position: absolute;
@@ -156,6 +222,14 @@
     text-align: left;
   }
   #hero-855 .cs-picture {
+    /* 623px - 814px */
+    height: clamp(38.9375rem, 60vw, 50.875rem);
+  }
+  #hero-855 .cs-card-fader {
+    /* 623px - 814px */
+    height: clamp(38.9375rem, 60vw, 50.875rem);
+  }
+  #hero-855 .cs-card-fader2 {
     /* 623px - 814px */
     height: clamp(38.9375rem, 60vw, 50.875rem);
   }
