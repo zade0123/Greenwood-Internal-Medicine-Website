@@ -97,7 +97,7 @@
 @media only screen and (min-width: 0rem) {
   #content-page-850 {
     padding: var(--sectionPadding);
-    background-color: #fff;
+    padding-bottom: 14vw;
     /* clips the wave background from causing overflow issues when it goes off screen */
     overflow: hidden;
     position: relative;
