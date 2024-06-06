@@ -8,7 +8,7 @@
     /* 175px - 260px top */
     padding: clamp(10.9375rem, 20vw, 16.25rem) 1rem clamp(6.25rem, 14vw, 12vw);
     /* clips svg wave from causing overflow issues */
-    overflow: hidden;
+    overflow: visible;
     position: relative;
     z-index: 1;
   }
@@ -59,7 +59,7 @@
     height: 100%;
     width: 100%;
     background: #1a1a1a;
-    opacity: 0.64;
+    opacity: .64;
     top: 0;
     left: 0;
     z-index: 1;
@@ -80,7 +80,7 @@
     display: block;
     position: absolute;
     left: 50%;
-    bottom: -1px;
+    bottom: -2px;
     transform: translateX(-50%);
     z-index: -1;
   }
