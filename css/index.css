@@ -292,11 +292,11 @@
 /* Large Desktop Parallax Effect - 1600px */
 @media only screen and (min-width: 100rem) {
   #hero-855 .cs-background {
-      background: url("../assets/images/indianapolissky.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+    background: url("../assets/images/indianapolissky.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
   #hero-855 .cs-background img {
       display: none;
