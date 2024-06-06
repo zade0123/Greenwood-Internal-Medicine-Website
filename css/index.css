@@ -139,6 +139,8 @@
     background: var(--primary);
     opacity: 0.3;
     position: absolute;
+    overflow: hidden;
+    display: block;
     animation-name: floatAnimation;
     animation-duration: 7s;
     animation-timing-function: ease-in-out;
@@ -158,6 +160,8 @@
     background: var(--primary);
     opacity: 0.15;
     position: absolute;
+    overflow: hidden;
+    display: block;
     animation-name: floatAnimation2;
     animation-duration: 7s;
     animation-timing-function: ease-in-out;
@@ -223,15 +227,15 @@
   }
   #hero-855 .cs-picture {
     /* 623px - 814px */
-    height: clamp(38.9375rem, 60vw, 50.875rem);
+    height: clamp(38rem, 60vw, 45rem);
   }
   #hero-855 .cs-card-fader {
     /* 623px - 814px */
-    height: clamp(38.9375rem, 60vw, 50.875rem);
+    height: clamp(38rem, 60vw, 45rem);
   }
   #hero-855 .cs-card-fader2 {
     /* 623px - 814px */
-    height: clamp(38.9375rem, 60vw, 50.875rem);
+    height: clamp(38rem, 60vw, 45rem);
   }
   #hero-855 .cs-wave {
     width: 100%;
