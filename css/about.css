@@ -345,6 +345,11 @@
     margin-bottom: 0rem;
   }
   #about-1451 .cs-picture {
+    /* 100px - 200px */
+    border-radius: 0 clamp(6.25rem, 17vw, 12.5rem) 0 clamp(6.25rem, 17vw, 12.5rem);
+    box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.16);
+    /* clips the img tag corners */
+    overflow: hidden;
     /* width and height changes at tablet */
     width: 85%;
     max-width: 21.875rem;
@@ -389,6 +394,7 @@
   }
   #about-1451 .cs-info:nth-of-type(even) .cs-picture {
     /* sends it to the right in the 2nd position */
+    border-radius: clamp(6.25rem, 17vw, 12.5rem) 0 clamp(6.25rem, 17vw, 12.5rem) 0;
     order: 2;
   }
   #about-1451 .cs-info:before {
