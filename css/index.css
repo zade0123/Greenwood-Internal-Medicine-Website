@@ -138,6 +138,7 @@
     box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.16);
     background: var(--primary);
     opacity: 0.3;
+    box-sizing: border-box;
     position: absolute;
     overflow: hidden;
     display: block;
@@ -159,6 +160,7 @@
     box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.16);
     background: var(--primary);
     opacity: 0.15;
+    box-sizing: border-box;
     position: absolute;
     overflow: hidden;
     display: block;
@@ -250,6 +252,17 @@
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
+  @keyframes floatAnimation3 {
+    0% {
+      transform: translate(-1rem,-1rem);
+    }
+    50% {
+      transform: translate(-2rem,-2rem);
+    }
+    100% {
+      transform: translate(-1rem,-1rem);
+    }
+  }
   #content-page-852 {
       padding: var(--sectionPadding);
       background-color: #fff;
@@ -370,6 +383,30 @@
       width: 100%;
       height: auto;
       display: block;
+  }
+  #content-page-852 .cs-card-fader {
+    content: "";
+    width: 100%;
+    max-width: 35.625rem;
+    /* 400px - 712px */
+    height: clamp(18.75rem, 40vw, 32.5rem);
+    box-shadow: 0px 3.3478px 50.2169px rgba(0, 0, 0, 0.16);
+    /* 125px - 200px */
+    border-radius: 0 clamp(7.8125rem, 15vw, 12.5rem) 0
+        clamp(7.8125rem, 15vw, 12.5rem);
+    /* prevents border from affecting height and width */
+    background: var(--primary);
+    box-sizing: border-box;
+    opacity: 0.3;
+    position: absolute;
+    overflow: hidden;
+    display: block;
+    animation-name: floatAnimation3;
+    animation-duration: 7s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    z-index: -1;
   }
   #content-page-852 .cs-image-group {
       width: 50%;
