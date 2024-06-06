@@ -217,29 +217,29 @@
     z-index: -2;
   }
   #hero-855 .cs-background:before {
-      /* Overlay */
-      content: "";
-      width: 100%;
-      height: 100%;
-      background: var(--primaryLight);
-      opacity: 0.9;
-      position: absolute;
-      display: block;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      /* prevents the cursor from interacting with it */
-      pointer-events: none;
+    /* Overlay */
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--primaryLight);
+    opacity: 0.9;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    /* prevents the cursor from interacting with it */
+    pointer-events: none;
   }
   #hero-855 .cs-background img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      /* makes the top of the image start at the top of the parent */
-      object-position: right top;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    /* makes the top of the image start at the top of the parent */
+    object-position: right top;
   }
 }
 /* Small Desktop - 1024px */
@@ -277,6 +277,29 @@
     width: 100%;
     left: 0;
     transform: none;
+  }
+  #hero-855 .cs-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    /* makes the top of the image start at the top of the parent */
+    object-position: top;
+  }
+}
+/* Large Desktop Parallax Effect - 1600px */
+@media only screen and (min-width: 100rem) {
+  #hero-855 .cs-background {
+      background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/on-computer.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+  }
+  #hero-855 .cs-background img {
+      display: none;
   }
 }
 
