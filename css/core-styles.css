@@ -100,7 +100,7 @@
     text-align: inherit;
     letter-spacing: .1em;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--secondary);
     margin-bottom: 0.25rem;
     display: block;
   }
@@ -440,10 +440,10 @@
     position: relative;
   }
   #cs-navigation .cs-li-link.cs-active {
-    color: var(--primary);
+    color: var(--secondary);
   }
   #cs-navigation .cs-li-link:hover {
-    color: var(--primary);
+    color: var(--secondary);
   }
   #cs-navigation .cs-button-solid {
     display: none;
@@ -565,7 +565,7 @@
     transition: background-color 0.3s;
   }
   #cs-navigation .cs-social-link:hover {
-    background-color: var(--primary);
+    background-color: var(--secondary);
   }
   #cs-navigation .cs-social-link:hover .cs-social-icon {
     opacity: 1;
@@ -619,10 +619,10 @@
     transition: color 0.3s;
   }
   #cs-navigation .cs-li-link:hover {
-    color: var(--primary);
+    color: var(--secondary);
   }
   #cs-navigation .cs-li-link.cs-active {
-    color: var(--primary);
+    color: var(--secondary);
   }
   #cs-navigation .cs-button-solid {
     font-size: 1rem;
@@ -637,7 +637,7 @@
     box-sizing: border-box;
     padding: 0 2rem;
     color: #fff;
-    background-color: var(--primary);
+    background-color: var(--secondary);
     display: inline-block;
     position: relative;
     z-index: 1;
@@ -739,7 +739,7 @@
             background-color 0.3s;
     }
     #cs-footer-842 .cs-social-link:hover {
-        background-color: var(--primaryLight);
+        background-color: var(--secondary);
         transform: translateY(-0.1875rem);
     }
     #cs-footer-842 .cs-social-link:hover .cs-social-img {
@@ -792,7 +792,7 @@
         transition: color 0.3s;
     }
     #cs-footer-842 .cs-link:hover {
-        color: var(--primaryLight);
+        color: var(--secondary);
     }
     #cs-footer-842 .cs-icon {
         width: 1.25rem;
@@ -842,7 +842,7 @@
         position: relative;
     }
     #cs-footer-842 .cs-credit-link:hover {
-        color: var(--primary);
+        color: var(--secondary);
     }
     #cs-footer-842 .cs-bottom-links {
         width: 100%;
@@ -855,7 +855,7 @@
         align-items: center;
     }
     #cs-footer-842 .cs-bottom-link:hover {
-        color: var(--primary);
+        color: var(--secondary);
     }
     #cs-footer-842 .cs-bottom-link:last-of-type:before {
         /* seperator */

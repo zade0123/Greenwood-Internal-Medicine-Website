@@ -1,196 +1,409 @@
 /*-- -------------------------- -->
-<---          Gallery           -->
+<---          Banner            -->
 <--- -------------------------- -*/
+
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  #gallery-48 {
-    padding: var(--sectionPadding);
+  #banner-850 {
+    /* 175px - 260px top */
+    padding: clamp(10.9375rem, 20vw, 16.25rem) 1rem clamp(6.25rem, 14vw, 12vw);
+    /* clips svg wave from causing overflow issues */
+    overflow: visible;
     position: relative;
+    z-index: 1;
   }
-  #gallery-48 .cs-container {
+  #banner-850 .cs-container {
+    text-align: center;
     width: 100%;
     max-width: 80rem;
     margin: auto;
     display: flex;
+    justify-content: center;
+    align-items: flex-start;
     flex-direction: column;
-    align-items: center;
-    /* 48px - 64px */
-    gap: clamp(3rem, 6vw, 4rem);
+    gap: 1rem;
   }
-  #gallery-48 .cs-content {
-    /* set text align to left if content needs to be left aligned */
-    text-align: center;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    /* centers content horizontally, set to flex-start to left align */
-    align-items: center;
-  }
-  #gallery-48 .cs-topper {
-    font-size: var(--topperFontSize);
-    line-height: 1.2em;
-    text-transform: uppercase;
-    text-align: inherit;
-    letter-spacing: .1em;
-    font-weight: 700;
-    color: var(--primary);
-    margin-bottom: 0.25rem;
-    display: block;
-  }
-  #gallery-48 .cs-title {
-    font-size: var(--headerFontSize);
+  #banner-850 .cs-int-title {
+    /* 39px - 61px */
+    font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
     font-weight: 900;
     line-height: 1.2em;
     text-align: inherit;
-    max-width: 43.75rem;
-    margin: 0 0 1rem 0;
-    color: var(--headerColor);
-    position: relative;
-  }
-  #gallery-48 .cs-title {
-    /* Override.  cs-topper cs-title and first cs-text should be removed and put into your global css sheet so it can control every instance of them on your site and is consistent. This selector is a section specific override that stays inside this stitch */
     margin: 0;
-    max-width: 20ch;
+    color: var(--bodyTextColorWhite);
+    position: relative;
   }
-  #gallery-48 .cs-image-group {
-    /* used rem so it doesn't scale with the font size of on parent */
-    font-size: min(1.1vw, 1em);
-    width: 100%;
-    padding: 0;
+  #banner-850 .cs-banner-text {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    font-weight: 400;
+    text-align: left;
     margin: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    /* 8px - 20px */
-    gap: clamp(0.5rem, 2vw, 1.25rem);
-  }
-  #gallery-48 .cs-row {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    /* 8px - 20px */
-    gap: clamp(0.5rem, 2vw, 1.25rem);
-  }
-  #gallery-48 .cs-picture {
-    width: 100%;
-    position: relative;
-    display: block;
-  }
-  #gallery-48 .cs-picture img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-  #gallery-48 .cs-row-1 .cs-picture-1 {
-    height: 35.4375em;
-  }
-  #gallery-48 .cs-row-1 .cs-picture-2 {
-    height: 39.3125em;
-  }
-  #gallery-48 .cs-row-1 .cs-picture-3 {
-    height: 32em;
-  }
-  #gallery-48 .cs-row-2 .cs-picture-1 {
-    height: 30.75em;
-  }
-  #gallery-48 .cs-row-2 .cs-picture-2 {
-    height: 32.3125em;
-  }
-  #gallery-48 .cs-row-2 .cs-picture-3 {
-    height: 39.3125em;
-  }
-  #gallery-48 .cs-row-3 .cs-picture-1 {
-    height: 39.0625em;
-  }
-  #gallery-48 .cs-row-3 .cs-picture-2 {
-    height: 28.25em;
-  }
-  #gallery-48 .cs-row-3 .cs-picture-3 {
-    height: 39.3125em;
-  }
-}
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #gallery-48 .cs-title {
     color: var(--bodyTextColorWhite);
-  }
-}
-/*-- -------------------------- -->
-<---            CTA             -->
-<--- -------------------------- -*/
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-  #cta-51 {
-    padding: var(--sectionPadding);
-    position: relative;
-  }
-  #cta-51 .cs-container {
-    width: 100%;
-    max-width: 80rem;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* 48px - 64px */
-    gap: clamp(3rem, 6vw, 4rem);
-  }
-  #cta-51 .cs-content {
-    /* set text align to left if content needs to be left aligned */
-    text-align: center;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    /* centers content horizontally, set to flex-start to left align */
-    align-items: center;
-  }
-  #cta-51 .cs-topper {
-    color: var(--secondary);
-  }
-  #cta-51 .cs-title,
-  #cta-51 .cs-text {
-    color: var(--bodyTextColorWhite);
-  }
-  #cta-51 .cs-text {
-    /* Override.  cs-topper cs-title and first cs-text should be removed and put into your global css sheet so it can control every instance of them on your site and is consistent. This selector is a section specific override that stays inside this stitch */
-    margin-bottom: 1rem;
     opacity: .8;
+    position: relative;
   }
-  #cta-51 .cs-text:last-of-type {
-    margin-bottom: 2rem;
-  }
-  #cta-51 .cs-picture {
-    height: 100%;
+  #banner-850 .cs-background {
     width: 100%;
+    height: 100%;
     display: block;
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
   }
-  #cta-51 .cs-picture:before {
-    /* black color overlay */
-    content: '';
+  #banner-850 .cs-background:before {
+    /* background color overlay */
+    content: "";
     position: absolute;
     display: block;
     height: 100%;
     width: 100%;
-    background: #000;
-    opacity: .8;
+    background: #1a1a1a;
+    opacity: .64;
     top: 0;
     left: 0;
     z-index: 1;
   }
-  #cta-51 .cs-picture img {
+  #banner-850 .cs-background img {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
+    /* Makes img tag act as a background image */
     object-fit: cover;
   }
+  #banner-850 .cs-wave {
+    /* we're stretching the svg wider than the viewport so it's taller and has more of a presence */
+    width: 48rem;
+    height: auto;
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
 }
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #banner-850 .cs-background:before {
+    opacity: 1;
+    background: linear-gradient(90.01deg, rgba(0, 0, 0, 0.9) 16.86%, rgba(0, 0, 0, 0) 100%);
+  }
+  #banner-850 .cs-banner-text {
+    width: 50%;
+  }
+  #banner-850 .cs-wave {
+    width: 100%;
+    left: 0;
+    transform: none;
+  }
+}
+
+/*-- -------------------------- -->
+<---           Stats            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #stats-887 {
+      padding: var(--sectionPadding);
+  }
+  #stats-887 .cs-container {
+      width: 100%;
+      /* changes to 1280px at desktop */
+      max-width: 34.375rem;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      /* 48px - 64px */
+      gap: clamp(3rem, 6vw, 4rem);
+  }
+  #stats-887 .cs-content {
+      /* set text align to left if content needs to be left aligned */
+      text-align: left;
+      width: 100%;
+      max-width: 33.875rem;
+      display: flex;
+      flex-direction: column;
+      /* centers content horizontally, set to flex-start to left align */
+      align-items: flex-start;
+  }
+
+  #stats-887 .cs-text {
+      margin-bottom: 1rem;
+  }
+  #stats-887 .cs-text:last-of-type {
+      margin-bottom: 2rem;
+  }
+  #stats-887 .cs-button-solid {
+      font-size: 1rem;
+      /* 46px - 56px */
+      line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+      text-decoration: none;
+      font-weight: 700;
+      text-align: center;
+      margin: 0;
+      color: #fff;
+      min-width: 9.375rem;
+      padding: 0 1.5rem;
+      background-color: var(--primary);
+      border-radius: 0.25rem;
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      /* prevents padding from adding to the width */
+      box-sizing: border-box;
+  }
+  #stats-887 .cs-button-solid:before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 0%;
+      background: #000;
+      opacity: 1;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      border-radius: 0.25rem;
+      transition: width 0.3s;
+  }
+  #stats-887 .cs-button-solid:hover:before {
+      width: 100%;
+  }
+  #stats-887 .cs-card-group {
+      width: 100%;
+      max-width: 39.375rem;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      /* 16px - 20px */
+      gap: clamp(1rem, 2vw, 1.25rem);
+  }
+  #stats-887 .cs-item {
+      text-align: center;
+      list-style: none;
+      /* changes at small desktop then again at large desktop */
+      width: 100%;
+      /* 44px - 60px */
+      padding: clamp(2.75rem, 5vw, 3.75rem) 2rem;
+      /* prevents padding and border from affecting height and width */
+      box-sizing: border-box;
+      /* clips cs-icon overflowing */
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      grid-column: span 2;
+      position: relative;
+  }
+  #stats-887 .cs-item:nth-of-type(1) {
+    background-color: rgba(0, 160, 170, .1);
+    border-radius: 0 5rem 0 5rem;
+  }
+  #stats-887 .cs-item:nth-of-type(2) {
+      background-color: rgba(0, 160, 170, .1);
+      border-radius: 5rem 0 5rem 0;
+  }
+  #stats-887 .cs-item:nth-of-type(3) {
+      background-color: rgba(0, 160, 170, .3);
+      border-radius: 5rem 0 5rem 0;
+  }
+  #stats-887 .cs-item:nth-of-type(4) {
+      background-color: rgba(0, 160, 170, .5);
+      border-radius: 0 5rem 0 5rem;
+  }
+  #stats-887 .cs-number {
+      /* 39px - 49px */
+      font-size: clamp(2.4375rem, 6vw, 3.0625rem);
+      line-height: 1.2em;
+      text-align: inherit;
+      font-weight: 900;
+      margin: 0 0 0.75rem 0;
+      color: var(--headerColor);
+  }
+  #stats-887 .cs-desc {
+      /* 16px -20px */
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      line-height: 1.2em;
+      font-weight: 700;
+      text-align: inherit;
+      margin: 0;
+      color: var(--bodyTextColor);
+  }
+}
+/* Tablet - 650px */
+@media only screen and (min-width: 40.625rem) {
+  #stats-887 .cs-item {
+      grid-column: span 1;
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #stats-887 .cs-container {
+      max-width: 80rem;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+  }
+}
+
+/*-- -------------------------- -->
+<---           Stats            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #stats-888 {
+      padding: var(--sectionPadding);
+      padding-bottom: 14vw;
+  }
+  #stats-888 .cs-container {
+      width: 100%;
+      /* changes to 1280px at desktop */
+      max-width: 34.375rem;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      /* 48px - 64px */
+      gap: clamp(3rem, 6vw, 4rem);
+  }
+  #stats-888 .cs-content {
+      /* set text align to left if content needs to be left aligned */
+      text-align: left;
+      width: 100%;
+      max-width: 33.875rem;
+      display: flex;
+      flex-direction: column;
+      /* centers content horizontally, set to flex-start to left align */
+      align-items: flex-start;
+  }
+
+  #stats-888 .cs-text {
+      margin-bottom: 1rem;
+  }
+  #stats-888 .cs-text:last-of-type {
+      margin-bottom: 2rem;
+  }
+  #stats-888 .cs-button-solid {
+      font-size: 1rem;
+      /* 46px - 56px */
+      line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+      text-decoration: none;
+      font-weight: 700;
+      text-align: center;
+      margin: 0;
+      color: #fff;
+      min-width: 9.375rem;
+      padding: 0 1.5rem;
+      background-color: var(--primary);
+      border-radius: 0.25rem;
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      /* prevents padding from adding to the width */
+      box-sizing: border-box;
+  }
+  #stats-888 .cs-button-solid:before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 0%;
+      background: #000;
+      opacity: 1;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      border-radius: 0.25rem;
+      transition: width 0.3s;
+  }
+  #stats-888 .cs-button-solid:hover:before {
+      width: 100%;
+  }
+  #stats-888 .cs-card-group {
+      width: 100%;
+      max-width: 39.375rem;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      /* 16px - 20px */
+      gap: clamp(1rem, 2vw, 1.25rem);
+  }
+  #stats-888 .cs-item {
+      text-align: center;
+      list-style: none;
+      /* changes at small desktop then again at large desktop */
+      width: 100%;
+      /* 44px - 60px */
+      padding: clamp(2.75rem, 5vw, 3.75rem) 2rem;
+      /* prevents padding and border from affecting height and width */
+      box-sizing: border-box;
+      /* clips cs-icon overflowing */
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      grid-column: span 2;
+      position: relative;
+  }
+  #stats-888 .cs-item:nth-of-type(1) {
+      background-color: rgba(0, 160, 170, .5);
+      border-radius: 0 5rem 0 5rem;
+  }
+  #stats-888 .cs-item:nth-of-type(2) {
+      background-color: rgba(0, 160, 170, .3);
+      border-radius: 5rem 0 5rem 0;
+  }
+  #stats-888 .cs-item:nth-of-type(3) {
+      background-color: rgba(0, 160, 170, .1);
+      border-radius: 5rem 0 5rem 0;
+  }
+  #stats-888 .cs-item:nth-of-type(4) {
+      background-color: rgba(0, 160, 170, .1);
+      border-radius: 0 5rem 0 5rem;
+  }
+  #stats-888 .cs-number {
+      /* 39px - 49px */
+      font-size: clamp(2.4375rem, 6vw, 3.0625rem);
+      line-height: 1.2em;
+      text-align: inherit;
+      font-weight: 900;
+      margin: 0 0 0.75rem 0;
+      color: var(--headerColor);
+  }
+  #stats-888 .cs-desc {
+      /* 16px -20px */
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      line-height: 1.2em;
+      font-weight: 700;
+      text-align: inherit;
+      margin: 0;
+      color: var(--bodyTextColor);
+  }
+}
+/* Tablet - 650px */
+@media only screen and (min-width: 40.625rem) {
+  #stats-888 .cs-item {
+      grid-column: span 1;
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #stats-888 .cs-container {
+      max-width: 80rem;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+  }
+  #stats-888 .cs-content {
+      /* sends it to the right in the 2nd position */
+      order: 2;
+  }
+}
+
+                              
