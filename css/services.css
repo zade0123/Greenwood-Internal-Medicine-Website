@@ -252,158 +252,226 @@
 }
 
 /*-- -------------------------- -->
-<---           Stats            -->
+<---          Reviews           -->
 <--- -------------------------- -*/
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  #stats-888 {
+  #reviews-864 {
       padding: var(--sectionPadding);
+      position: relative;
+      z-index: 1;
       padding-bottom: 14vw;
   }
-  #stats-888 .cs-container {
+  #reviews-864:before {
+      content: "";
       width: 100%;
-      /* changes to 1280px at desktop */
+      height: 100%;
+      background: var(--primary);
+      opacity: 0.03;
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      z-index: -1;
+  }
+  #reviews-864 .cs-container {
+      width: 100%;
+      /* changes to 1280px at tablet */
       max-width: 34.375rem;
       margin: auto;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       /* 48px - 64px */
       gap: clamp(3rem, 6vw, 4rem);
   }
-  #stats-888 .cs-content {
+  #reviews-864 .cs-content {
       /* set text align to left if content needs to be left aligned */
-      text-align: left;
+      text-align: center;
       width: 100%;
-      max-width: 33.875rem;
+      max-width: 56.25rem;
       display: flex;
       flex-direction: column;
       /* centers content horizontally, set to flex-start to left align */
-      align-items: flex-start;
+      align-items: center;
   }
 
-  #stats-888 .cs-text {
-      margin-bottom: 1rem;
+  #reviews-864 .cs-title {
+      /* 20 characters including spaces */
+      max-width: 20ch;
   }
-  #stats-888 .cs-text:last-of-type {
-      margin-bottom: 2rem;
+  #reviews-864 .cs-text {
+      max-width: 100%;
   }
-  #stats-888 .cs-button-solid {
-      font-size: 1rem;
-      /* 46px - 56px */
-      line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-      text-decoration: none;
-      font-weight: 700;
-      text-align: center;
+  #reviews-864 .cs-card-group {
+      padding: 0;
       margin: 0;
-      color: #fff;
-      min-width: 9.375rem;
-      padding: 0 1.5rem;
-      background-color: var(--primary);
-      border-radius: 0.25rem;
-      display: inline-block;
-      position: relative;
-      z-index: 1;
-      /* prevents padding from adding to the width */
-      box-sizing: border-box;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      /* 16px - 20px */
+      gap: clamp(1rem, 2.5vw, 1.15rem);
   }
-  #stats-888 .cs-button-solid:before {
-      content: "";
+  #reviews-864 .cs-item {
+      list-style: none;
+      width: 100%;
+      /* 20px - 32px */
+      padding: clamp(1.25rem, 4vw, 2rem);
+      background-color: #fff;
+      border-radius: 0 1.5rem 0 1.5rem;
+      /* prevents padding from adding to height and width */
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      grid-column: span 12;
+      position: relative;
+  }
+  #reviews-864 .cs-flex-group {
+      width: 100%;
+      margin: 0 0 1.25rem 0;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid #fbcebd;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1.25rem;
+  }
+  #reviews-864 .cs-profile {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      /* clips image corners to make circle */
+      overflow: hidden;
+      position: relative;
+      display: block;
+  }
+  #reviews-864 .cs-profile img {
       position: absolute;
-      height: 100%;
-      width: 0%;
-      background: #000;
-      opacity: 1;
       top: 0;
       left: 0;
-      z-index: -1;
-      border-radius: 0.25rem;
-      transition: width 0.3s;
-  }
-  #stats-888 .cs-button-solid:hover:before {
+      height: 100%;
       width: 100%;
+      /* makes the image behave like a background image */
+      object-fit: cover;
   }
-  #stats-888 .cs-card-group {
-      width: 100%;
-      max-width: 39.375rem;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      /* 16px - 20px */
-      gap: clamp(1rem, 2vw, 1.25rem);
-  }
-  #stats-888 .cs-item {
-      text-align: center;
-      list-style: none;
-      /* changes at small desktop then again at large desktop */
-      width: 100%;
-      /* 44px - 60px */
-      padding: clamp(2.75rem, 5vw, 3.75rem) 2rem;
-      /* prevents padding and border from affecting height and width */
-      box-sizing: border-box;
-      /* clips cs-icon overflowing */
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      grid-column: span 2;
-      position: relative;
-  }
-  #stats-888 .cs-item:nth-of-type(1) {
-      background-color: rgba(0, 160, 170, .5);
-      border-radius: 0 5rem 0 5rem;
-  }
-  #stats-888 .cs-item:nth-of-type(2) {
-      background-color: rgba(0, 160, 170, .3);
-      border-radius: 5rem 0 5rem 0;
-  }
-  #stats-888 .cs-item:nth-of-type(3) {
-      background-color: rgba(0, 160, 170, .1);
-      border-radius: 5rem 0 5rem 0;
-  }
-  #stats-888 .cs-item:nth-of-type(4) {
-      background-color: rgba(0, 160, 170, .1);
-      border-radius: 0 5rem 0 5rem;
-  }
-  #stats-888 .cs-number {
-      /* 39px - 49px */
-      font-size: clamp(2.4375rem, 6vw, 3.0625rem);
-      line-height: 1.2em;
-      text-align: inherit;
-      font-weight: 900;
-      margin: 0 0 0.75rem 0;
-      color: var(--headerColor);
-  }
-  #stats-888 .cs-desc {
-      /* 16px -20px */
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      line-height: 1.2em;
+  #reviews-864 .cs-name {
+      /* 20px - 25px */
+      font-size: clamp(1.25rem, 2vw, 1.5625rem);
+      line-height: 1.5em;
       font-weight: 700;
+      margin: 0 0 0.5rem 0;
+      color: var(--headerColor);
+      display: block;
+  }
+  #reviews-864 .cs-job {
+      font-size: 0.875rem;
+      line-height: 1.2em;
+      font-weight: 400;
+      margin: 0;
+      color: var(--bodyTextColor);
+      display: block;
+  }
+  #reviews-864 .cs-review {
+      /* 14px - 16px */
+      font-size: clamp(0.875rem, 1.5vw, 1rem);
+      line-height: 1.5em;
+      margin: 0;
+      margin-bottom: 1.25rem;
+      max-width: 27.75rem;
+      color: var(--bodyTextColor);
+  }
+  #reviews-864 .cs-stars {
+      width: 6.75rem;
+      height: auto;
+      margin: 0 0 0.5rem 0;
+      display: block;
+  }
+  #reviews-864 .cs-desc {
+      /* 14px - 16px */
+      font-size: clamp(0.875rem, 1.5vw, 1rem);
+      line-height: 1.5em;
       text-align: inherit;
       margin: 0;
       color: var(--bodyTextColor);
   }
-}
-/* Tablet - 650px */
-@media only screen and (min-width: 40.625rem) {
-  #stats-888 .cs-item {
-      grid-column: span 1;
+  #reviews-864 .cs-quote1,
+  #reviews-864 .cs-quote2 {
+      display: none;
+      width: 12.125rem;
+      height: auto;
+      display: block;
+      position: absolute;
+      z-index: -1;
+  }
+  #reviews-864 .cs-quote1 {
+      top: 0;
+      left: 0;
+  }
+  #reviews-864 .cs-quote2 {
+      bottom: 0;
+      right: 0;
   }
 }
-/* Small Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
-  #stats-888 .cs-container {
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #reviews-864 .cs-container {
       max-width: 80rem;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
   }
-  #stats-888 .cs-content {
-      /* sends it to the right in the 2nd position */
-      order: 2;
+  #reviews-864 .cs-item {
+      grid-column: span 6;
+  }
+  #reviews-864 .cs-item:last-of-type {
+      grid-column: span 12;
+  }
+  #reviews-864 .cs-stars {
+      margin-top: auto;
+  }
+  #reviews-864 .cs-quote1,
+  #reviews-864 .cs-quote2 {
+      display: block;
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #reviews-864 .cs-item {
+      grid-column: span 4;
+  }
+  #reviews-864 .cs-item:last-of-type {
+      grid-column: span 4;
   }
 }
 
+/* Mobile - 360px */
+/* you can copy and paste these styles into the section CSS where you placed the #list-893 HTML, or you can place it in your global stylesheet so you can reuse the HTML in any Side By Side section on your site. That way when you make changes to it, it will also change everywhere in the site */
+#list-893 {
+  max-width: 39.375rem;
+  margin: 0 0 2rem 0;
+  padding: 0;
+  columns: 2;
+}
+#list-893 .cs-li {
+  list-style: none;
+  margin: 0 0 0.5rem 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.75rem;
+  position: relative;
+}
+#list-893 .cs-li:before {
+  /* accent shape */
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-top: 0.5rem;
+  background: #bababa;
+  border-radius: 0.25rem 0 0.25rem 0;
+  display: block;
+  /* prevents flexbox from squishing it */
+  flex: none;
+}
+
+                              
                               

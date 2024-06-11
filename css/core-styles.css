@@ -688,6 +688,7 @@
         position: absolute;
         left: 0;
         bottom: 99%;
+        z-index: 1;
     }
     #cs-footer-842 .cs-container {
         width: 100%;
