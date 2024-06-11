@@ -530,6 +530,28 @@
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
+  @keyframes floatAnimation4 {
+    0% {
+      transform: translate(1rem,-1rem);
+    }
+    50% {
+      transform: translate(2rem,-2rem);
+    }
+    100% {
+      transform: translate(1rem,-1rem);
+    }
+  }
+  @keyframes floatAnimation5 {
+    0% {
+      transform: translate(-1rem,-1rem);
+    }
+    50% {
+      transform: translate(-2rem,-2rem);
+    }
+    100% {
+      transform: translate(-1rem,-1rem);
+    }
+  }
   #sbs-r-869 {
       padding: var(--sectionPadding);
       padding-bottom: 14vw;
@@ -688,7 +710,28 @@
       border-radius: 12.5em 0 12.5em 0;
       /* clips img corners */
       overflow: hidden;
-      display: block;
+      display: flex;
+  }
+  #sbs-r-869 .cs-left-img::after {
+      content: "";
+      width: 100%;
+      max-width: 27.4375em;
+      /* 400px - 712px */
+      height: 35em;
+      box-shadow: 0px 3.3478px 50.2169px rgba(0, 0, 0, 0.16);
+      /* 125px - 200px */
+      border-radius: 12.5em 0 12.5em 0;
+      /* prevents border from affecting height and width */
+      background: var(--primary);
+      box-sizing: border-box;
+      opacity: 0.3;
+      position: absolute;
+      animation-name: floatAnimation4;
+      animation-duration: 7s;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+      z-index: -1;
   }
   #sbs-r-869 .cs-left-img img {
       width: 100%;
@@ -704,13 +747,37 @@
       border-radius: 0 12.5em 0 12.5em;
       /* clips img corners */
       overflow: hidden;
-      display: block;
+      display: flex;
       transform: translateY(6.25em);
+      z-index: -1;
+  }
+  #sbs-r-869 .cs-right-img::after {
+      content: "";
+      width: 100%;
+      max-width: 27.4375em;
+      /* 400px - 712px */
+      height: 35em;
+      box-shadow: 0px 3.3478px 50.2169px rgba(0, 0, 0, 0.16);
+      /* 125px - 200px */
+      border-radius: 0 12.5em 0 12.5em;
+      /* prevents border from affecting height and width */
+      background: var(--primary);
+      box-sizing: border-box;
+      opacity: 0.3;
+      display: block;
+      position: absolute;
+      animation-name: floatAnimation5;
+      animation-duration: 7s;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+      z-index: 1;
   }
   #sbs-r-869 .cs-right-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
       /* flips it horizontally the opposite of the parent. This way images have the same orientation as the source image */
       transform: scaleX(-1);
   }
@@ -747,636 +814,4 @@
       left: 0;
       transform: translateY(-50%);
   }
-}
-
-/*-- -------------------------- -->
-<---          Gallery           -->
-<--- -------------------------- -*/
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-  #gallery-453 {
-    /* centers the inline-block button */
-    text-align: center;
-    padding: var(--sectionPadding);
-  }
-  #gallery-453 .cs-container {
-    width: 100%;
-    /* changes to 1280px at tablet */
-    max-width: 34.375rem;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* 48px - 64px */
-    gap: clamp(3rem, 6vw, 4rem);
-    position: relative;
-  }
-  #gallery-453 .cs-content {
-    /* set text align to left if content needs to be left aligned */
-    text-align: left;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    /* centers content horizontally, set to flex-start to left align */
-    align-items: flex-start;
-  }
-  #gallery-453 .cs-button-group {
-    width: 100%;
-    max-width: 37.5rem;
-    margin: 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-    row-gap: 0.5rem;
-    column-gap: 1.5rem;
-  }
-  #gallery-453 .cs-button {
-    font-size: 1rem;
-    line-height: 1.5em;
-    padding: 0 0 0 1rem;
-    color: var(--bodyTextColor);
-    background-color: transparent;
-    border: none;
-    position: relative;
-    transition: color .3s;
-  }
-  #gallery-453 .cs-button:before {
-    content: '';
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 50%;
-    background: var(--primary);
-    /* starting value, this will animate to 1 when the button is hovered, and when the active class is on it */
-    opacity: 0;
-    /* prevents mouse from interacting with it */
-    pointer-events: none;
-    position: absolute;
-    display: block;
-    top: 50%;
-    /* start -20px left of the button */
-    left: -1.25rem;
-    transform: translateY(-50%);
-    /* transition to and from the active class styles on hover*/
-    transition: opacity .3s, left .3s;
-  }
-  #gallery-453 .cs-button:hover {
-    color: var(--primary);
-    cursor: pointer;
-  }
-  #gallery-453 .cs-button:hover:before {
-    left: 0;
-    opacity: 1;
-  }
-  #gallery-453 .cs-button.cs-active {
-    /* when the button is active, add these styles to the button and its pseudo */
-    font-weight: 700;
-    color: var(--primary);
-  }
-  #gallery-453 .cs-button.cs-active:before {
-    /* animate to these values when the cs-active class is added to the button and on hover */
-    left: 0;
-    opacity: 1;
-  }
-  #gallery-453 .cs-gallery {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    /* 48px - 64px */
-    margin-bottom: clamp(3rem, 3vw, 4rem);
-    opacity: 1;
-    visibility: visible;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    left: 0;
-    /* 16px - 20px */
-    gap: clamp(1rem, 1vw, 1.25rem);
-    transition: transform .7s, opacity .3s, visibility .5s, top .3s, left .3s;
-    /* makes the transfrom scaling orgin the top left corner, dictates the direction by which the scale transforms animate towards */
-    transform-origin: left top;
-  }
-  #gallery-453 .cs-gallery.cs-hidden {
-    /* by using visibility:hidden instead of display:none, we can see the animations from the opacity and transforms, display:none won't render animations. */
-    visibility: hidden;
-    /* prevents the mouse from interacting with it */
-    pointer-events: none;
-    /* hidden galleries have a 0 opacity, and we animate the opacity to 1 when they become active */
-    opacity: 0;
-    /* this top and left value help control the animation, by setting it to position absolute and left 0, the gallery won't fly off screen to the left, it will stop its position to be at the left edge of the .cs-container (left: 0). Same for the bottom:0 value, the gallery won't go past that posiiton when it animates */
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    /* prevents the hidden galleries from overflowing the section, and makes a nice animations to transition to and from */
-    transform: scaleY(0) scaleX(0);
-  }
-  #gallery-453 .cs-gallery.cs-hidden .cs-image {
-    /* when gallery is hidden, add these styles to the cs-image to animate from when cs-hidden is removed from the .cs-gallery */
-    transform: translateY(2.1875rem);
-    opacity: 0;
-  }
-  #gallery-453 .cs-image {
-    width: clamp(47%, 42.5vw, 48.5%);
-    /* changes at tablet */
-    aspect-ratio: 0.72985782;
-    /* clips the image corners */
-    overflow: hidden;
-    display: block;
-    position: relative;
-    /* when .cs-hidden is removed from the .cs-gallery, reset these values and animate from their hidden styles */
-    transform: translateY(0rem);
-    opacity: 1;
-    transition: opacity .6s, transform .6s;
-  }
-  #gallery-453 .cs-image:nth-of-type(1) {
-    /* these delays stagger the reveal of each image so they all go one after the other and not all at once */
-    transition-delay: .15s;
-  }
-  #gallery-453 .cs-image:nth-of-type(2) {
-    transition-delay: .3s;
-  }
-  #gallery-453 .cs-image:nth-of-type(3) {
-    transition-delay: .45s;
-  }
-  #gallery-453 .cs-image:nth-of-type(4) {
-    transition-delay: .6s;
-  }
-  #gallery-453 .cs-image:nth-of-type(5) {
-    transition-delay: .75s;
-  }
-  #gallery-453 .cs-image:nth-of-type(6) {
-    transition-delay: .9s;
-  }
-  #gallery-453 .cs-image:nth-of-type(7) {
-    transition-delay: 1.05s;
-  }
-  #gallery-453 .cs-image:nth-of-type(8) {
-    transition-delay: 1.20s;
-  }
-  #gallery-453 .cs-image img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    /* makes it act like a background image */
-    object-fit: cover;
-  }
-}
-/* Tablet - 600px */
-@media only screen and (min-width: 48rem) {
-  #gallery-453 .cs-container {
-    max-width: 80rem;
-  }
-  #gallery-453 .cs-content {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
-  }
-  #gallery-453 .cs-flex {
-    width: 50%;
-  }
-  #gallery-453 .cs-title {
-    margin: 0;
-  }
-  #gallery-453 .cs-button-group {
-    width: auto;
-  }
-  #gallery-453 .cs-gallery {
-    justify-content: space-between;
-  }
-  #gallery-453 .cs-image {
-    /* 171px - 305px */
-    width: clamp(10.6875rem, 23.3%, 19.0625rem);
-    aspect-ratio: 0.71529412;
-  }
-}
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #gallery-453 .cs-title,
-  body.dark-mode #gallery-453 .cs-text,
-  body.dark-mode #gallery-453 .cs-button {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #gallery-453 .cs-title.cs-active,
-  body.dark-mode #gallery-453 .cs-text.cs-active,
-  body.dark-mode #gallery-453 .cs-button.cs-active {
-    color: var(--secondary);
-  }
-}
-/*-- -------------------------- -->
-<---       Meet The Team        -->
-<--- -------------------------- -*/
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-  #meet-team-221 {
-    padding: var(--sectionPadding);
-    background: #F1F1F4;
-  }
-  #meet-team-221 .cs-container {
-    width: 100%;
-    /* changes to 1280px at tablet */
-    max-width: 34.375rem;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* 48px - 64px */
-    gap: clamp(3rem, 6vw, 4rem);
-  }
-  #meet-team-221 .cs-content {
-    /* set text align to left if content needs to be left aligned */
-    text-align: center;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    /* centers content horizontally, set to flex-start to left align */
-    align-items: center;
-  }
-  #meet-team-221 .cs-picture {
-    /* 160px - 220px */
-    width: clamp(10rem, 20vw, 13.75rem);
-    height: clamp(10rem, 20vw, 13.75rem);
-    margin-bottom: 1rem;
-    border-radius: 50%;
-    display: block;
-    position: relative;
-    /* clips the corners off the image tag */
-    overflow: hidden;
-  }
-  #meet-team-221 .cs-picture img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    /* Makes image behave like a background image */
-    object-fit: cover;
-    transition: transform .7s;
-  }
-  #meet-team-221 .cs-card-group {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  #meet-team-221 .cs-item {
-    list-style: none;
-    /* Changes on tablet */
-    width: 100%;
-    max-width: 21.25rem;
-    /* 16px - 20px */
-    padding: clamp(1rem, 2vw, 1.25rem);
-    padding-bottom: 1.25rem;
-    background: var(--bodyTextColorWhite);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    /* prevents padding from adding to height and width */
-    box-sizing: border-box;
-  }
-  #meet-team-221 .cs-item:hover .cs-picture img {
-    transform: scale(1.1);
-  }
-  #meet-team-221 .cs-name {
-    font-size: 1.25rem;
-    line-height: 1.2em;
-    font-weight: 700;
-    margin-bottom: 0.25rem;
-    color: var(--headerColor);
-    display: block;
-  }
-  #meet-team-221 .cs-job-title {
-    font-size: 1rem;
-    margin-bottom: 0.75rem;
-    color: var(--primary);
-    display: block;
-  }
-  #meet-team-221 .cs-item-text {
-    font-size: 1rem;
-    line-height: 1.5em;
-    text-align: center;
-    margin: 0;
-    margin-bottom: 0.75rem;
-    color: #7D799C;
-  }
-  #meet-team-221 .cs-social {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.25rem;
-  }
-  #meet-team-221 .cs-link {
-    /* 28px - 32px */
-    width: clamp(1.75rem, 3vw, 2rem);
-    /* 28px - 32px */
-    height: clamp(1.75rem, 3vw, 2rem);
-    /* After making the a tag into a box, we center the image inside of it */
-    border-radius: 0.25rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* creates the 3D space for the 3D effect when spinning */
-    transform-style: preserve-3d;
-    perspective: 700px;
-  }
-  #meet-team-221 .cs-link:hover .cs-icon {
-    transform: translateY(-0.3125rem) rotateY(360deg);
-  }
-  #meet-team-221 .cs-icon {
-    width: 0.875rem;
-    height: auto;
-    transition: transform .7s;
-  }
-}
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-  #meet-team-221 .cs-container {
-    max-width: 80em;
-  }
-  #meet-team-221 .cs-card-group {
-    flex-direction: row;
-  }
-  #meet-team-221 .cs-item {
-    width: 31%;
-  }
-}
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #meet-team-221 {
-    background-color: rgba(0, 0, 0, 0.2);
-  }
-  body.dark-mode #meet-team-221 .cs-title,
-  body.dark-mode #meet-team-221 .cs-text,
-  body.dark-mode #meet-team-221 .cs-name,
-  body.dark-mode #meet-team-221 .cs-item-text,
-  body.dark-mode #meet-team-221 .cs-job-title {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #meet-team-221 .cs-item {
-    background-color: var(--medium);
-  }
-  body.dark-mode #meet-team-221 .cs-item-text {
-    opacity: .8;
-  }
-  body.dark-mode #meet-team-221 .cs-icon {
-    /* turns icons white */
-    filter: grayscale(1) brightness(1000%);
-  }
-}
-/*-- -------------------------- -->
-<---          Reviews           -->
-<--- -------------------------- -*/
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-  #reviews-727 {
-    padding: var(--sectionPadding);
-  }
-  #reviews-727 .cs-container {
-    width: 100%;
-    /* changes to 1280px at tablet */
-    max-width: 34.375rem;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* 48px - 64px */
-    gap: clamp(3rem, 6vw, 4rem);
-  }
-  #reviews-727 .cs-content {
-    /* set text align to left if content needs to be left aligned */
-    text-align: center;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    /* centers content horizontally, set to flex-start to left align */
-    align-items: center;
-  }
-  #reviews-727 .cs-title {
-    /* cs-title override */
-    max-width: 20ch;
-  }
-  #reviews-727 .cs-card-group {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.25rem;
-  }
-  #reviews-727 .cs-item {
-    list-style: none;
-    width: 100%;
-    margin: 0;
-    /* 32px - 48px top & bottom */
-    /* 16px - 32px left & right */
-    padding: clamp(2rem, 7vw, 3rem) clamp(1rem, 4vw, 2rem);
-    /* makes padding not affect height and width */
-    box-sizing: border-box;
-    background-color: #F0F0F0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  #reviews-727 .cs-icon {
-    /* 30px - 40px */
-    width: clamp(1.875rem, 4vw, 2.5rem);
-    height: auto;
-    margin: 0 0 2rem 0;
-    display: block;
-  }
-  #reviews-727 .cs-h3 {
-    /* 20px - 25px */
-    font-size: clamp(1.25rem, 4vw, 1.5625rem);
-    line-height: 1.2em;
-    font-weight: 700;
-    margin: 0 0 1.5rem 0;
-    color: var(--headerColor);
-  }
-  #reviews-727 .cs-item-text {
-    /* 14px - 16px */
-    font-size: clamp(0.875rem, 4vw, 1rem);
-    line-height: 1.5em;
-    margin: 0 0 3rem 0;
-    color: var(--bodyTextColor);
-  }
-  #reviews-727 .cs-name {
-    font-size: 1.25rem;
-    line-height: 1.2em;
-    font-weight: 500;
-    margin: auto 0 0 0;
-    color: var(--headerColor);
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 0.5rem;
-    position: relative;
-  }
-  #reviews-727 .cs-name:before {
-    content: '';
-    width: 0.5rem;
-    height: 1px;
-    background: currentColor;
-    display: block;
-    position: relative;
-  }
-}
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-  #reviews-727 .cs-container {
-    max-width: 80rem;
-  }
-  #reviews-727 .cs-card-group {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  #reviews-727 .cs-item {
-    width: 48.5%;
-  }
-}
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #reviews-727 .cs-title,
-  body.dark-mode #reviews-727 .cs-text,
-  body.dark-mode #reviews-727 .cs-h3,
-  body.dark-mode #reviews-727 .cs-item-text,
-  body.dark-mode #reviews-727 .cs-name {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #reviews-727 .cs-text {
-    opacity: .8;
-  }
-  body.dark-mode #reviews-727 .cs-item {
-    background-color: var(--medium);
-  }
-}
-/*-- -------------------------- -->
-<---            CTA             -->
-<--- -------------------------- -*/
-
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-  #cta-1132 {
-      padding: var(--sectionPadding);
-      /* chnages at tablet */
-      background-color: var(--primary);
-      overflow: hidden;
-      position: relative;
-      z-index: 1;
-  }
-  #cta-1132 .cs-container {
-      width: 100%;
-      max-width: 80rem;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      /* 48px - 64px */
-      gap: clamp(3rem, 6vw, 4rem);
-  }
-  #cta-1132 .cs-content {
-      /* set text align to left if content needs to be left aligned */
-      text-align: center;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      /* centers content horizontally, set to flex-start to left align */
-      align-items: center;
-  }
-
-  #cta-1132 .cs-title {
-      text-transform: capitalize;
-      max-width: 24ch;
-      /* 28px - 40px */
-      margin: 0 0 clamp(1.75rem, 3vw, 2.5rem);
-
-      color: var(--bodyTextColorWhite);
-  }
-  #cta-1132 .cs-button-box {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-  }
-  #cta-1132 .cs-button-solid {
-      font-size: 1rem;
-      /* 46px - 56px */
-      line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-      text-decoration: none;
-      font-weight: 700;
-      text-align: center;
-      margin: 0;
-      color: #fff;
-      min-width: 12.5rem;
-      padding: 0 1.5rem;
-      background-color: var(--secondary);
-      border-radius: 0.5rem;
-      display: inline-block;
-      overflow: hidden;
-      position: relative;
-      z-index: 1;
-      /* prevents padding from adding to the width */
-      box-sizing: border-box;
-      transition: color 0.3s;
-  }
-  #cta-1132 .cs-button-solid:before {
-      content: "";
-      position: absolute;
-      height: 100%;
-      width: 0%;
-      background: #000;
-      border-radius: 0.5rem;
-      opacity: 1;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      transition: width 0.3s;
-  }
-  #cta-1132 .cs-button-solid:hover {
-      color: #fff;
-  }
-  #cta-1132 .cs-button-solid:hover:before {
-      width: 100%;
-  }
-  #cta-1132 .cs-background {
-      width: 100%;
-      height: 100%;
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-  }
-  #cta-1132 .cs-background:before {
-      /* background color overlay */
-      content: "";
-      position: absolute;
-      display: block;
-      height: 100%;
-      width: 100%;
-      background: #000000;
-      opacity: 0.6;
-      top: 0;
-      left: 0;
-      z-index: 1;
-  }
-  #cta-1132 .cs-background img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      /* Makes img tag act as a background image */
-      object-fit: cover;
-  }
-}
-
-                              
+}    
