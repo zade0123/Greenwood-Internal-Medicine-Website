@@ -281,8 +281,8 @@
       /* centers content horizontally, set to flex-start to left align */
       align-items: center;
   }
-  #logos-857 .cs-title {
-      margin: 0;
+  #steps-889 .cs-text {
+    max-width: 66.5rem;
   }
   #logos-857 .cs-logo-carousel {
     width: 100%;
