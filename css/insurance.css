@@ -72,6 +72,7 @@
     width: 100%;
     /* Makes img tag act as a background image */
     object-fit: cover;
+    transform: scaleX(-1);
   }
   #banner-850 .cs-wave {
     /* we're stretching the svg wider than the viewport so it's taller and has more of a presence */
@@ -89,7 +90,7 @@
 @media only screen and (min-width: 48rem) {
   #banner-850 .cs-background:before {
     opacity: 1;
-    background: linear-gradient(90.01deg, rgba(0, 0, 0, 0.9) 16.86%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(90.01deg, rgba(0, 0, 0, 0.8) 16.86%, rgba(0, 0, 0, 0) 100%);
   }
   #banner-850 .cs-banner-text {
     width: 50%;
